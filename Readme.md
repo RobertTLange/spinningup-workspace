@@ -10,4 +10,6 @@ In this repository I (Robert Tjarko Lange) document my self-study of Deep Reinfo
 * [x] [Deep Reinforcement Learning with Double Q-learning, Hasselt et al 2015.](01_Deep_Q_Learning/03_2015_Hasselt.md)
 * [x] [Prioritized Experience Replay, Schaul et al, 2016.](01_Deep_Q_Learning/04_2016_Schaul.md)
 * [x] [Dueling Network Architectures for Deep Reinforcement Learning, Wang et al, 2016.](01_Deep_Q_Learning/05_2016_Wang.md)
-* [ ] Rainbow: Combining Improvements in Deep Reinforcement Learning, Hessel et al, 2017.
+* [ ] [Rainbow: Combining Improvements in Deep Reinforcement Learning, Hessel et al, 2017.](01_Deep_Q_Learning/05_2016_Wang.md)
+
+**Supplementing Papers**
