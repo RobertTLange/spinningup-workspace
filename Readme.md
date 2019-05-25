@@ -16,7 +16,7 @@ In this repository I (Robert Tjarko Lange) document my self-study of Deep Reinfo
 
 * [x] [Noisy Networks for Exploration, Fortunato et al, 2018.](01_Deep_Q_Learning/xx_2018_Fortunato.md)
 * [ ] A Distributional Perspective on Reinforcement Learning, Bellemare et al, 2017.)
-* [ ] A General Reinforcement Learning Algorithm that Masters Chess, Shogi and Go through Self-Play, Silver et al 2019.)
+* [x] A General Reinforcement Learning Algorithm that Masters Chess, Shogi and Go through Self-Play, Silver et al 2019.)
 
 # 2. Model-Free RL: (b) Policy Gradients
 
