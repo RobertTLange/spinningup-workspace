@@ -20,8 +20,8 @@ In this repository I (Robert Tjarko Lange) document my self-study of Deep Reinfo
 
 # 2. Model-Free RL: (b) Policy Gradients
 
-* [x] Asynchronous Methods for Deep Reinforcement Learning, Mnih et al, 2016. Algorithm: A3C.
-* [ ] Trust Region Policy Optimization, Schulman et al, 2015. Algorithm: TRPO.
+* [x] [Asynchronous Methods for Deep Reinforcement Learning, Mnih et al, 2016.](02_Policy_Gradients/07_2016_Mnih.md)
+* [ ] [Trust Region Policy Optimization, Schulman et al, 2015.](02_Policy_Gradients/08_2015_Schulman.md)
 * [ ] High-Dimensional Continuous Control Using Generalized Advantage Estimation, Schulman et al, 2015. Algorithm: GAE.
 * [ ] Proximal Policy Optimization Algorithms, Schulman et al, 2017. Algorithm: PPO-Clip, PPO-Penalty.
 * [ ] Emergence of Locomotion Behaviours in Rich Environments, Heess et al, 2017. Algorithm: PPO-Penalty.
