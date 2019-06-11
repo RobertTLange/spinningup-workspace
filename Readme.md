@@ -22,7 +22,7 @@ In this repository I (Robert Tjarko Lange) document my self-study of Deep Reinfo
 
 * [x] [Asynchronous Methods for Deep Reinforcement Learning, Mnih et al, 2016.](02_Policy_Gradients/07_2016_Mnih.md)
 * [x] [Trust Region Policy Optimization, Schulman et al, 2015.](02_Policy_Gradients/08_2015_Schulman.md)
-* [ ] High-Dimensional Continuous Control Using Generalized Advantage Estimation, Schulman et al, 2015. Algorithm: GAE.
+* [x] [High-Dimensional Continuous Control Using Generalized Advantage Estimation, Schulman et al, 2016. Algorithm: GAE.](02_Policy_Gradients/09_2015_Schulman.md)
 * [ ] Proximal Policy Optimization Algorithms, Schulman et al, 2017. Algorithm: PPO-Clip, PPO-Penalty.
 * [ ] Emergence of Locomotion Behaviours in Rich Environments, Heess et al, 2017. Algorithm: PPO-Penalty.
 * [ ] Scalable trust-region method for deep reinforcement learning using Kronecker-factored approximation, Wu et al, 2017. Algorithm: ACKTR.
