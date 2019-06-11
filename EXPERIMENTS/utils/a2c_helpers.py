@@ -11,7 +11,7 @@ USE_CUDA = torch.cuda.is_available()
 Variable = lambda *args, **kwargs: autograd.Variable(*args, **kwargs).cuda() if USE_CUDA else autograd.Variable(*args, **kwargs)
 
 
-def command_line_vpg():
+def command_line_a2c():
     parser = argparse.ArgumentParser()
     parser.add_argument('-roll_upd', '--ROLLOUT_EVERY', action="store",
                         default=20, type=int,
@@ -27,6 +27,9 @@ def command_line_vpg():
     parser.add_argument('-max_steps', '--MAX_STEPS', action="store",
                         default=200, type=int,
                         help='Max # of steps before episode terminated')
+    parser.add_argument('-num_steps', '--NUM_STEPS', action="store",
+                        default=5, type=int,
+                        help='Max # of steps before A2C update')
     parser.add_argument('-v', '--VERBOSE', action="store_true", default=False,
                         help='Get training progress printed out')
     parser.add_argument('-print', '--PRINT_EVERY', action="store",
@@ -47,74 +50,60 @@ def command_line_vpg():
     return parser.parse_args()
 
 
-def train_vpg_batch(agent, optimizers, TRAIN_BATCH_SIZE):
-    # Initialize placeholder lists
-    batch_obs, batch_acts = [], []
-    batch_advantage, batch_log_probs, batch_values = [], [], []
-    batch_rets, batch_lens = [], []
-    ep_rews = []
+def compute_returns(next_value, rewards, masks, gamma=0.99):
+    R = next_value
+    returns = []
+    for step in reversed(range(len(rewards))):
+        R = rewards[step] + gamma * R * masks[step]
+        returns.insert(0, R)
+    return returns
 
-    # reset episode-specific variables
-    env = gym.make("dense-v0")
-    obs = env.reset()
-    done = False
-    steps = 0
 
-    while True:
+def train_a2c_steps(env, obs, agent, optimizer, NUM_STEPS, GAMMA):
+    log_probs = []
+    values    = []
+    rewards   = []
+    masks     = []
+    entropy = 0
+
+    for _ in range(NUM_STEPS):
         obs_T = Variable(torch.FloatTensor(obs.flatten()).unsqueeze(0),
                          volatile=True)
-        policy_v = agent["policy"].forward(obs_T)
-        value = agent["value"].forward(obs_T)
+        policy_v, value = agent(obs_T)
 
         action = policy_v.sample()
-        next_obs, rew, done, _  = env.step(action.cpu().numpy())
-        steps += 1
-
-        batch_obs.append(obs.copy())
-        batch_acts.append(action)
-        ep_rews.append(rew)
+        next_obs, rew, done, _ = env.step(action.cpu().numpy())
 
         log_prob = policy_v.log_prob(action)
-        batch_log_probs.append(log_prob)
-        batch_values.append(value)
+        entropy += policy_v.entropy().mean()
 
-        # Go to next episode if current one terminated or update obs
+        log_probs.append(log_prob)
+        values.append(value)
+        rewards.append(rew)
+        masks.append(1 - done)
+
+        obs = next_obs
+
         if done:
-            batch_rets.append(sum(ep_rews))
-            batch_lens.append(len(ep_rews))
+            obs = env.reset()
+            break
 
-            # Different formulation: Full Reward: [ep_ret] * ep_len
-            batch_rew_to_go = reward_to_go(ep_rews)
-            batch_advantage += list(batch_rew_to_go - batch_values)
-            # reset episode-specific variables
-            obs, done, ep_rews, steps, batch_values = env.reset(), False, [], 0, []
-            # end experience loop if enough data gathered
-            if len(batch_obs) > TRAIN_BATCH_SIZE:
-                break
-        else:
-            obs = next_obs
+    next_obs = Variable(torch.FloatTensor(next_obs.flatten()).unsqueeze(0),
+                        volatile=True)
+    _, next_value = agent(next_obs)
+    returns = compute_returns(next_value, rewards, masks, GAMMA)
 
-    batch_log_probs = torch.cat(batch_log_probs)
-    batch_advantage = torch.cat(batch_advantage)
+    log_probs, returns, values = torch.cat(log_probs),  torch.cat(returns).detach(), torch.cat(values)
 
-    actor_loss = -(batch_log_probs * batch_advantage.detach()).mean()
-    critic_loss = batch_advantage.pow(2).mean()
+    advantage = returns - values
 
-    # Perform Policy Gradient Step
-    optimizers["policy"].zero_grad()
-    actor_loss.backward()
-    optimizers["policy"].step()
+    actor_loss  = -(log_probs * advantage.detach()).mean()
+    critic_loss = advantage.pow(2).mean()
 
-    # Update value network estimate
-    optimizers["value"].zero_grad()
-    critic_loss.backward()
-    optimizers["value"].step()
-    return actor_loss.item(), critic_loss.item() , batch_rets, batch_lens
+    loss = actor_loss + 0.5 * critic_loss - 0.001 * entropy
 
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
 
-def reward_to_go(rews):
-    n = len(rews)
-    rtgs = np.zeros_like(rews)
-    for i in reversed(range(n)):
-        rtgs[i] = rews[i] + (rtgs[i+1] if i+1 < n else 0)
-    return rtgs
+    return actor_loss, critic_loss, env, obs

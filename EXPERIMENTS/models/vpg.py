@@ -32,8 +32,8 @@ def init_vpg_nets(L_RATE, USE_CUDA, NUM_ACTIONS=4):
              "value": vpg_value_net(num_inputs, hidden_size)}
 
     if USE_CUDA:
-        agents["value"] = agent["value"].cuda()
-        agents["policy"] = agent["policy"].cuda()
+        agent["value"] = agent["value"].cuda()
+        agent["policy"] = agent["policy"].cuda()
 
     optimizers = {"value": optim.Adam(params=agent["value"].parameters(), lr=L_RATE),
                   "policy": optim.Adam(params=agent["policy"].parameters(), lr=L_RATE)}

@@ -48,12 +48,14 @@ def update_target(current_model, target_model):
     target_model.load_state_dict(current_model.state_dict())
 
 
-def get_logging_stats(opt_counter, agents, GAMMA, NUM_ROLLOUTS, MAX_STEPS, PG=False):
+def get_logging_stats(opt_counter, agent, GAMMA,
+                      NUM_ROLLOUTS, MAX_STEPS, AGENT):
     steps = []
     rew = []
 
     for i in range(NUM_ROLLOUTS):
-        step_temp, reward_temp, buffer = rollout_episode(agents, GAMMA, MAX_STEPS, PG)
+        step_temp, reward_temp, buffer = rollout_episode(agent, GAMMA,
+                                                         MAX_STEPS, AGENT)
         steps.append(step_temp)
         rew.append(reward_temp)
 
@@ -77,7 +79,7 @@ def get_logging_stats(opt_counter, agents, GAMMA, NUM_ROLLOUTS, MAX_STEPS, PG=Fa
     return reward_stats, steps_stats
 
 
-def rollout_episode(agents, GAMMA, MAX_STEPS, PG):
+def rollout_episode(agent, GAMMA, MAX_STEPS, AGENT):
     env = gym.make("dense-v0")
     # Rollout the policy for a single episode - greedy!
     replay_buffer = ReplayBuffer(capacity=5000)
@@ -87,10 +89,15 @@ def rollout_episode(agents, GAMMA, MAX_STEPS, PG):
     steps = 0
 
     while steps < MAX_STEPS:
-        if PG:
+        if AGENT == "Vanilla-PG":
             obs = Variable(torch.FloatTensor(obs.flatten()).unsqueeze(0),
                            volatile=True)
-            policy_v = agents["policy"].forward(obs)
+            policy_v = agent["policy"].forward(obs)
+            action = policy_v.sample()
+        elif AGENT == "A2C":
+            obs = Variable(torch.FloatTensor(obs.flatten()).unsqueeze(0),
+                           volatile=True)
+            policy_v, value = agent(obs)
             action = policy_v.sample()
         else:
             action = agents["current"].act(obs.flatten(), epsilon=0.05)
@@ -106,3 +113,23 @@ def rollout_episode(agents, GAMMA, MAX_STEPS, PG):
         if done:
             break
     return steps, episode_rew, replay_buffer.buffer
+
+
+def run_multiple_times(args, run_fct):
+
+    df_across_runs = []
+    print("START RUNNING VPG AGENT LEARNING FOR {} TIMES".format(args.RUN_TIMES))
+    for t in range(args.RUN_TIMES):
+        start_t = time.time()
+        df_temp = run_fct(args)
+        df_across_runs.append(df_temp)
+        total_t = time.time() - start_t
+        print("Done training {}/{} runs after {:.2f} Secs".format(t+1,
+                                                                  args.RUN_TIMES,
+                                                                  total_t))
+
+    df_concat = pd.concat(df_across_runs)
+    by_row_index = df_concat.groupby(df_concat.index)
+    df_means = by_row_index.mean()
+    df_means.to_csv("results/" + str(args.RUN_TIMES) + "_RUNS_VPG.csv")
+    return df_means
