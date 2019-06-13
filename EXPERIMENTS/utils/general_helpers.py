@@ -5,6 +5,8 @@ import torch.autograd as autograd
 import gym
 import gridworld
 
+import math
+import random
 import numpy as np
 import pandas as pd
 from collections import deque
@@ -100,7 +102,7 @@ def rollout_episode(agent, GAMMA, MAX_STEPS, AGENT):
             policy_v, value = agent(obs)
             action = policy_v.sample()
         else:
-            action = agents["current"].act(obs.flatten(), epsilon=0.05)
+            action = agent["current"].act(obs.flatten(), epsilon=0.05)
         next_obs, reward, done, _ = env.step(action)
         steps += 1
 

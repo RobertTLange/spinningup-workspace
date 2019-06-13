@@ -1,0 +1,16 @@
+certifi==2019.3.9
+cycler==0.10.0
+future==0.17.1
+gym==0.12.5
+kiwisolver==1.1.0
+matplotlib==3.1.0
+numpy==1.16.4
+pandas==0.24.2
+pycolab==1.2
+pyglet==1.3.2
+pyparsing==2.4.0
+python-dateutil==2.8.0
+pytz==2019.1
+scipy==1.3.0
+six==1.12.0
+torch==1.1.0
