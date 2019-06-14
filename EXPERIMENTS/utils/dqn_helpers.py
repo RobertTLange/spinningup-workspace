@@ -36,6 +36,13 @@ def command_line_dqn():
                         default=500, type=int,
                         help='#Episodes after which to print.')
 
+    parser.add_argument('-input', '--INPUT_DIM', action="store",
+                        default=1200, type=int, help='Input Dimension')
+    parser.add_argument('-hidden', '--HIDDEN_SIZE', action="store",
+                        default=128, type=int, help='Hidden Dimension')
+    parser.add_argument('-num_actions', '--NUM_ACTIONS', action="store",
+                        default=4, type=int, help='Number of Actions')
+
     parser.add_argument('-gamma', '--GAMMA', action="store",
                         default=0.9, type=float,
                         help='Discount factor')

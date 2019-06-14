@@ -7,12 +7,13 @@ import gridworld
 import torch
 import torch.autograd as autograd
 
-from models.dqn import MLP_DQN, MLP_DuelingDQN, init_dqn
-from utils.dqn_helpers import command_line_dqn, compute_td_loss
+from models.dqn import init_dqn
+from models.drqn import MLP_DRQN
+from utils.dqn_helpers import command_line_dqn
+from utils.drqn_helpers import compute_episode_loss
 from utils.general_helpers import ReplayBuffer, update_target, epsilon_by_episode, get_logging_stats
 
-
-def run_dqn_learning(args):
+def run_drqn_learning(args):
     log_template = "Step {:>2} | T {:.1f} | Median R {:.1f} | Mean R {:.1f} | Median S {:.1f} | Mean S {:.1f}"
 
     # Set the GPU device on which to run the agent
@@ -46,13 +47,8 @@ def run_dqn_learning(args):
     if AGENT == "DOUBLE": TRAIN_DOUBLE = True
     else: TRAIN_DOUBLE = False
 
-    # Setup agent, replay replay_buffer, logging stats df
-    if AGENT == "MLP-DQN" or AGENT == "DOUBLE":
-        agents, optimizer = init_dqn(MLP_DQN, L_RATE, USE_CUDA,
-                                     INPUT_DIM, HIDDEN_SIZE, NUM_ACTIONS)
-    elif AGENT == "MLP-Dueling-DQN":
-        agents, optimizer = init_dqn(MLP_DuelingDQN, L_RATE, USE_CUDA,
-                                     INPUT_DIM, HIDDEN_SIZE, NUM_ACTIONS)
+    agents, optimizer = init_dqn(MLP_DRQN, L_RATE, USE_CUDA,
+                                 INPUT_DIM, HIDDEN_SIZE, NUM_ACTIONS)
 
     replay_buffer = ReplayBuffer(capacity=5000)
 
@@ -64,56 +60,61 @@ def run_dqn_learning(args):
 
     # Initialize optimization update counter and environment
     opt_counter = 0
-    env = gym.make("dense-v0")
     ep_id = 0
+    env = gym.make("dense-v0")
+
     # RUN TRAINING LOOP OVER EPISODES
     while opt_counter < NUM_UPDATES:
-        epsilon = epsilon_by_episode(ep_id + 1, EPS_START, EPS_STOP, EPS_DECAY)
+        epsilon = epsilon_by_episode(opt_counter + 1, EPS_START,
+                                     EPS_STOP, EPS_DECAY)
 
         obs = env.reset()
 
         steps = 0
+        # Initialize Hidden State
+        agents["current"].init_hidden()
+        agents["target"].init_hidden()
+
         while steps < MAX_STEPS:
             action = agents["current"].act(obs.flatten(), epsilon)
             next_obs, rew, done, _  = env.step(action)
             steps += 1
-
             # Push transition to ER Buffer
             replay_buffer.push(ep_id, steps, obs, action,
                                rew, next_obs, done)
 
-            if len(replay_buffer) > TRAIN_BATCH_SIZE:
-                opt_counter += 1
-                loss = compute_td_loss(agents, optimizer, replay_buffer,
-                                       TRAIN_BATCH_SIZE, GAMMA, Variable,
-                                       TRAIN_DOUBLE)
-
-
-            # Go to next episode if current one terminated or update obs
+            # Break episode if terminated & perform update step
             if done: break
             else: obs = next_obs
 
-            # On-Policy Rollout for Performance evaluation
-            if (opt_counter+1) % ROLLOUT_EVERY == 0:
-                r_stats, s_stats = get_logging_stats(opt_counter, agents,
-                                                     GAMMA, NUM_ROLLOUTS,
-                                                     MAX_STEPS, AGENT)
-                reward_stats = pd.concat([reward_stats, r_stats], axis=0)
-                step_stats = pd.concat([step_stats, s_stats], axis=0)
-
-            if (opt_counter+1) % UPDATE_EVERY == 0:
-                update_target(agents["current"], agents["target"])
-
-            if VERBOSE and (opt_counter+1) % PRINT_EVERY == 0:
-                stop = time.time()
-                print(log_template.format(opt_counter+1, stop-start,
-                                          r_stats.loc[0, "rew_median"],
-                                          r_stats.loc[0, "rew_mean"],
-                                          s_stats.loc[0, "steps_median"],
-                                          s_stats.loc[0, "steps_mean"]))
-                start = time.time()
-
         ep_id += 1
+        if replay_buffer.num_episodes() > TRAIN_BATCH_SIZE:
+            opt_counter += 1
+            loss = compute_episode_loss(agents, optimizer,
+                                        replay_buffer,
+                                        TRAIN_BATCH_SIZE, GAMMA,
+                                        Variable, TRAIN_DOUBLE)
+
+        # On-Policy Rollout for Performance evaluation
+        if (opt_counter+1) % ROLLOUT_EVERY == 0:
+            r_stats, s_stats = get_logging_stats(opt_counter, agents,
+                                                 GAMMA, NUM_ROLLOUTS,
+                                                 MAX_STEPS, AGENT)
+            reward_stats = pd.concat([reward_stats, r_stats], axis=0)
+            step_stats = pd.concat([step_stats, s_stats], axis=0)
+
+        if (opt_counter+1) % UPDATE_EVERY == 0:
+            update_target(agents["current"], agents["target"])
+
+        if VERBOSE and (opt_counter+1) % PRINT_EVERY == 0:
+            stop = time.time()
+            print(log_template.format(opt_counter+1, stop-start,
+                                      r_stats.loc[0, "rew_median"],
+                                      r_stats.loc[0, "rew_mean"],
+                                      s_stats.loc[0, "steps_median"],
+                                      s_stats.loc[0, "steps_mean"]))
+            start = time.time()
+
     # Finally save all results!
     torch.save(agents["current"].state_dict(), "agents/" + str(NUM_UPDATES) + "_" + AGENT_FNAME)
     # Save the logging dataframe
@@ -129,6 +130,6 @@ if __name__ == "__main__":
 
     if args.RUN_TIMES == 1:
         print("START RUNNING {} AGENT LEARNING FOR 1 TIME".format(args.AGENT))
-        run_dqn_learning(args)
+        run_drqn_learning(args)
     else:
-        run_multiple_times(args, run_dqn_learning)
+        run_multiple_times(args, run_drqn_learning)

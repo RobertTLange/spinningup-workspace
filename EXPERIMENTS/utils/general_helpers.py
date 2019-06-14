@@ -35,6 +35,23 @@ class ReplayBuffer(object):
         ep_id, step, state, action, reward, next_state, done = zip(*random.sample(self.buffer, batch_size))
         return np.stack(state), action, reward, np.stack(next_state), done
 
+    def sample_episodes(self, batch_size):
+        ep_ids = np.random.choice(np.unique(np.array(self.buffer)[:,0]), batch_size, replace=False)
+
+        sampled_episodes = []
+        for ep in ep_ids:
+            episode_transitions = []
+            step_ids = np.where(np.array(self.buffer)[:, 0] == int(ep))
+            for step in step_ids[0]:
+                episode_transitions.append(self.buffer[int(step)])
+            # print(ep, step_ids, len(episode_transitions))
+            ep_id, step, state, action, reward, next_state, done = zip(*episode_transitions)
+            sampled_episodes.append([ep_id, step, state, action, reward, next_state, done])
+        return sampled_episodes
+
+    def num_episodes(self):
+        return len(np.unique(np.array(self.buffer)[:,0]))
+
     def __len__(self):
         return len(self.buffer)
 

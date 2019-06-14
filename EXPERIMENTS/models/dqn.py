@@ -7,6 +7,8 @@ import torch.nn as nn
 import torch.autograd as autograd
 import torch.optim as optim
 
+from utils.general_helpers import init_weights
+
 torch.manual_seed(0)
 
 import warnings
@@ -17,13 +19,14 @@ USE_CUDA = torch.cuda.is_available()
 Variable = lambda *args, **kwargs: autograd.Variable(*args, **kwargs).cuda() if USE_CUDA else autograd.Variable(*args, **kwargs)
 
 
-def init_dqn(model, L_RATE, USE_CUDA, NUM_ACTIONS=4,
-               load_checkpoint_path=None):
+def init_dqn(model, L_RATE, USE_CUDA,
+             INPUT_DIM, HIDDEN_SIZE, NUM_ACTIONS,
+             load_checkpoint_path=None):
     """
     Out: Model (or dictionay) as well as optimizer
     """
-    agents = {"current": model(NUM_ACTIONS),
-              "target": model(NUM_ACTIONS)}
+    agents = {"current": model(INPUT_DIM, HIDDEN_SIZE, NUM_ACTIONS),
+              "target": model(INPUT_DIM, HIDDEN_SIZE, NUM_ACTIONS)}
 
     if USE_CUDA:
         agents["current"] = agents["current"].cuda()
@@ -42,19 +45,20 @@ def init_dqn(model, L_RATE, USE_CUDA, NUM_ACTIONS=4,
 
 
 class MLP_DQN(nn.Module):
-    def __init__(self, NUM_ACTIONS=4):
+    def __init__(self, INPUT_DIM, HIDDEN_SIZE, NUM_ACTIONS):
         super(MLP_DQN, self).__init__()
 
-        num_inputs = 10*20*6
         self.action_space_size = NUM_ACTIONS
 
         self.layers = nn.Sequential(
-            nn.Linear(num_inputs, 128),
+            nn.Linear(INPUT_DIM, HIDDEN_SIZE),
             nn.ReLU(),
-            nn.Linear(128, 128),
+            nn.Linear(HIDDEN_SIZE, HIDDEN_SIZE),
             nn.ReLU(),
-            nn.Linear(128, self.action_space_size)
+            nn.Linear(HIDDEN_SIZE, self.action_space_size)
         )
+
+        self.layers.apply(init_weights)
 
     def forward(self, x):
         return self.layers(x)
@@ -70,30 +74,28 @@ class MLP_DQN(nn.Module):
 
 
 class MLP_DuelingDQN(nn.Module):
-    def __init__(self, NUM_ACTIONS=4):
+    def __init__(self, INPUT_DIM, HIDDEN_SIZE, NUM_ACTIONS):
         super(MLP_DuelingDQN, self).__init__()
         # Implements a Dueling DQN agent based on MLP
-        num_inputs = 10*20*6
         self.action_space_size = NUM_ACTIONS
 
-        hidden_units = 128
         self.feature = nn.Sequential(
-            nn.Linear(num_inputs, hidden_units),
+            nn.Linear(INPUT_DIM, HIDDEN_SIZE),
             nn.ReLU()
         )
         self.feature.apply(init_weights)
 
         self.advantage = nn.Sequential(
-            nn.Linear(hidden_units, hidden_units),
+            nn.Linear(HIDDEN_SIZE, HIDDEN_SIZE),
             nn.ReLU(),
-            nn.Linear(hidden_units, self.action_space_size)
+            nn.Linear(HIDDEN_SIZE, self.action_space_size)
         )
         self.advantage.apply(init_weights)
 
         self.value = nn.Sequential(
-            nn.Linear(hidden_units, hidden_units),
+            nn.Linear(HIDDEN_SIZE, HIDDEN_SIZE),
             nn.ReLU(),
-            nn.Linear(hidden_units, 1)
+            nn.Linear(HIDDEN_SIZE, 1)
         )
         self.value.apply(init_weights)
 
@@ -111,51 +113,4 @@ class MLP_DuelingDQN(nn.Module):
             action = q_value.max(1)[1].data[0]
         else:
             action = random.randrange(self.action_space_size)
-        return action
-
-
-class CNN_DDQN(nn.Module):
-    def __init__(self, params):
-        super(CNN_DDQN, self).__init__()
-
-        self.input_shape = params.observation_shape
-        self.num_actions = params.action_space_size
-
-        self.features = nn.Sequential(
-            nn.Conv2d(self.input_shape[0], 32, kernel_size=3, stride=1),
-            nn.ReLU(),
-            nn.Conv2d(32, 64, kernel_size=2, stride=3),
-            nn.ReLU(),
-            )
-
-        self.advantage = nn.Sequential(
-            nn.Linear(self.feature_size(), 512),
-            nn.ReLU(),
-            nn.Linear(512, self.num_actions)
-        )
-
-        self.value = nn.Sequential(
-            nn.Linear(self.feature_size(), 512),
-            nn.ReLU(),
-            nn.Linear(512, 1)
-        )
-
-    def forward(self, x):
-        x = self.features(x)
-        x = x.view(x.size(0), -1)
-        advantage = self.advantage(x)
-        value = self.value(x)
-        return value + advantage - advantage.mean()
-
-    def feature_size(self):
-        return self.features(autograd.Variable(torch.zeros(1, *self.input_shape))).view(1, -1).size(1)
-
-    def act(self, state, epsilon):
-        if random.random() > epsilon:
-            state = Variable(torch.FloatTensor(np.float32(state)).unsqueeze(0),
-                             volatile=True)
-            q_value = self.forward(state)
-            action = q_value.max(1)[1].data[0]
-        else:
-            action = random.randrange(self.num_actions)
         return action
