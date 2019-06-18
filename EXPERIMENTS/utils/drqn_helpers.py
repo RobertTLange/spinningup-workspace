@@ -34,7 +34,6 @@ def compute_episode_loss(agents, optimizer, replay_buffer,
 
         agents["current"].init_hidden()
         agents["target"].init_hidden()
-        loss = 0
         for t in range(steps_in_ep):
             q_values = agents["current"](obs[t].unsqueeze(0))
             q_value = q_values.gather(1, action[t].unsqueeze(0).unsqueeze(1)).squeeze(1)
@@ -49,12 +48,13 @@ def compute_episode_loss(agents, optimizer, replay_buffer,
 
             expected_q_value = reward[t] + GAMMA* next_q_value * (1 - done[t])
 
-        loss += (q_value - expected_q_value.detach()).pow(2).mean()
+            loss = (q_value - expected_q_value.detach()).pow(2).mean()
 
-        # Perform optimization step for agent
-        optimizer.zero_grad()
-        loss.backward()
-        torch.nn.utils.clip_grad_norm(agents["current"].parameters(), 0.5)
-        optimizer.step()
+            # Perform optimization step for agent
+            optimizer.zero_grad()
+            loss.backward(retain_graph=True)
+            torch.nn.utils.clip_grad_norm(agents["current"].parameters(), 0.5)
+            optimizer.step()
+            loss_total += loss.item()
 
     return loss_total
