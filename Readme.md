@@ -23,7 +23,7 @@ In this repository I (Robert Tjarko Lange) document my self-study of Deep Reinfo
 * [x] [Trust Region Policy Optimization, Schulman et al, 2015.](01_B_Policy_Gradients/08_2015_Schulman.md)
 * [x] [High-Dimensional Continuous Control Using Generalized Advantage Estimation, Schulman et al, 2016. Algorithm: GAE.](01_B_Policy_Gradients/09_2015_Schulman.md)
 * [x] [Proximal Policy Optimization Algorithms, Schulman et al, 2017.](01_B_Policy_Gradients/10_2017_Schulman.md)
-* [ ] Emergence of Locomotion Behaviours in Rich Environments, Heess et al, 2017. Algorithm: PPO-Penalty.
+* [x] [Emergence of Locomotion Behaviours in Rich Environments, Heess et al, 2017.](01_B_Policy_Gradients/11_2017_Heess.md)
 * [ ] Scalable trust-region method for deep reinforcement learning using Kronecker-factored approximation, Wu et al, 2017. Algorithm: ACKTR.
 * [ ] Sample Efficient Actor-Critic with Experience Replay, Wang et al, 2016. Algorithm: ACER.
 * [ ] Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor, Haarnoja et al, 2018. Algorithm: SAC.
