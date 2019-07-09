@@ -25,11 +25,11 @@ In this repository I (Robert Tjarko Lange) document my self-study of Deep Reinfo
 * [x] [Proximal Policy Optimization Algorithms, Schulman et al, 2017.](01_B_Policy_Gradients/10_2017_Schulman.md)
 * [x] [Emergence of Locomotion Behaviours in Rich Environments, Heess et al, 2017.](01_B_Policy_Gradients/11_2017_Heess.md)
 * [x] [Scalable trust-region method for deep reinforcement learning using Kronecker-factored approximation, Wu et al, 2017.](01_B_Policy_Gradients/12_2017_Wu.md)
-* [x] [Sample Efficient Actor-Critic with Experience Replay, Wang et al, 2016.]((01_B_Policy_Gradients/13_2017_Wang.md)
+* [x] [Sample Efficient Actor-Critic with Experience Replay, Wang et al, 2016.](01_B_Policy_Gradients/13_2017_Wang.md)
 * [ ] Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor, Haarnoja et al, 2018. Algorithm: SAC.
 
 # 1. Model-Free RL: (c) Deterministic Policy Gradients
-* [ ] Deterministic Policy Gradient Algorithms, Silver et al, 2014.
+* [x] [Deterministic Policy Gradient Algorithms, Silver et al, 2014.](01_C_Deterministic_Policy_Gradients/15_2014_Silver.md)
 * [ ] Continuous Control With Deep Reinforcement Learning, Lillicrap et al, 2015.
 * [ ] Addressing Function Approximation Error in Actor-Critic Methods, Fujimoto et al, 2018.
 
