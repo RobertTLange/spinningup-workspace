@@ -30,7 +30,7 @@ In this repository I (Robert Tjarko Lange) document my self-study of Deep Reinfo
 
 # 1. Model-Free RL: (c) Deterministic Policy Gradients
 * [x] [Deterministic Policy Gradient Algorithms, Silver et al, 2014.](01_C_Deterministic_Policy_Gradients/15_2014_Silver.md)
-* [ ] Continuous Control With Deep Reinforcement Learning, Lillicrap et al, 2015.
+* [x] [Continuous Control With Deep Reinforcement Learning, Lillicrap et al, 2015.](01_C_Deterministic_Policy_Gradients/16_2016_Lillicrap.md)
 * [ ] Addressing Function Approximation Error in Actor-Critic Methods, Fujimoto et al, 2018.
 
 # 1. Model-Free RL: (d) Distributional RL
