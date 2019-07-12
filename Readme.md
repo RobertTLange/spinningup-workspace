@@ -1,7 +1,9 @@
 # Deep Reinforcement Learning Workbook
 ## Author: Robert Tjarko Lange | 2019
 
-In this repository I (Robert Tjarko Lange) document my self-study of Deep Reinforcement Learning. More specifically, I collect reading notes as well as reproduction attempts. The chronology of this repository is based on the amazing "Spinning Up in DRL" tutorial by OpenAI.
+In this repository I document my self-study of Deep Reinforcement Learning. More specifically, I collect reading notes as well as reproduction attempts. The chronology of this repository is based on the amazing ["Spinning Up in DRL"](https://spinningup.openai.com/en/latest/spinningup/keypapers.html) tutorial by OpenAI which in my mind is the best resource on SOTA DRL as of today.
+
+Here are all papers and the corresponding notes that I got to read so far:
 
 # 1. Model-Free RL: (a) Deep Q-Learning
 
@@ -31,7 +33,7 @@ In this repository I (Robert Tjarko Lange) document my self-study of Deep Reinfo
 # 1. Model-Free RL: (c) Deterministic Policy Gradients
 * [x] [Deterministic Policy Gradient Algorithms, Silver et al, 2014.](01_C_Deterministic_Policy_Gradients/15_2014_Silver.md)
 * [x] [Continuous Control With Deep Reinforcement Learning, Lillicrap et al, 2015.](01_C_Deterministic_Policy_Gradients/16_2016_Lillicrap.md)
-* [ ] Addressing Function Approximation Error in Actor-Critic Methods, Fujimoto et al, 2018.
+* [x] [Addressing Function Approximation Error in Actor-Critic Methods, Fujimoto et al, 2018.](01_C_Deterministic_Policy_Gradients/17_2018_Fujimoto.md)
 
 # 1. Model-Free RL: (d) Distributional RL
 * [ ] A Distributional Perspective on Reinforcement Learning, Bellemare et al, 2017.
