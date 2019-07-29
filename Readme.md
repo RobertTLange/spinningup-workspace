@@ -36,7 +36,7 @@ Here are all papers and the corresponding notes that I got to read so far:
 * [x] [Addressing Function Approximation Error in Actor-Critic Methods, Fujimoto et al, 2018.](01_C_Deterministic_Policy_Gradients/17_2018_Fujimoto.md)
 
 # 1. Model-Free RL: (d) Distributional RL
-* [ ] A Distributional Perspective on Reinforcement Learning, Bellemare et al, 2017.
+* [x] [A Distributional Perspective on Reinforcement Learning, Bellemare et al, 2017.](01_D_Distributional_RL/18_2017_Bellemare.md)
 * [ ] Distributional Reinforcement Learning with Quantile Regression, Dabney et al, 2017.
 * [ ] Implicit Quantile Networks for Distributional Reinforcement Learning, Dabney et al, 2018.
 * [ ] Dopamine: A Research Framework for Deep Reinforcement Learning, Anonymous, 2018.
