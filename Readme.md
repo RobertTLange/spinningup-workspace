@@ -38,7 +38,7 @@ Here are all papers and the corresponding notes that I got to read so far:
 # 1. Model-Free RL: (d) Distributional RL
 * [x] [A Distributional Perspective on Reinforcement Learning, Bellemare et al, 2017.](01_D_Distributional_RL/18_2017_Bellemare.md)
 * [x] [Distributional Reinforcement Learning with Quantile Regression, Dabney et al, 2017.](01_D_Distributional_RL/19_2017_Dabney.md)
-* [ ] Implicit Quantile Networks for Distributional Reinforcement Learning, Dabney et al, 2018.
+* [x] [Implicit Quantile Networks for Distributional Reinforcement Learning, Dabney et al, 2018.](01_D_Distributional_RL/20_2018_Dabney.md)
 * [ ] Dopamine: A Research Framework for Deep Reinforcement Learning, Anonymous, 2018.
 
 **Supplementing Papers**
