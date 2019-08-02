@@ -5,45 +5,35 @@ In this repository I document my self-study of Deep Reinforcement Learning. More
 
 Here are all papers and the corresponding notes that I got to read so far:
 
-# 1. Model-Free RL: (a) Deep Q-Learning
-
-* [x] [Playing Atari with Deep Reinforcement Learning, Mnih et al, 2013.](01_A_Deep_Q_Learning/01_2013_Mnih.md)
-* [x] [Deep Recurrent Q-Learning for Partially Observable MDPs, Hausknecht and Stone, 2015.](01_A_Deep_Q_Learning/02_2015_Hausknecht.md)
-* [x] [Deep Reinforcement Learning with Double Q-learning, Hasselt et al 2015.](01_A_Deep_Q_Learning/03_2015_Hasselt.md)
-* [x] [Prioritized Experience Replay, Schaul et al, 2016.](01_A_Deep_Q_Learning/04_2016_Schaul.md)
-* [x] [Dueling Network Architectures for Deep Reinforcement Learning, Wang et al, 2016.](01_A_Deep_Q_Learning/05_2016_Wang.md)
-* [x] [Rainbow: Combining Improvements in Deep Reinforcement Learning, Hessel et al, 2017.](01_A_Deep_Q_Learning/06_2017_Hessel.md)
-
-**Supplementing Papers**
-
-* [x] [Noisy Networks for Exploration, Fortunato et al, 2018.](01_A_Deep_Q_Learning/xx_2018_Fortunato.md)
-* [x] [A General Reinforcement Learning Algorithm that Masters Chess, Shogi and Go through Self-Play, Silver et al 2019.](01_A_Deep_Q_Learning/yy_2019_Silver.md)
-
-# 1. Model-Free RL: (b) Policy Gradients
-
-* [x] [Asynchronous Methods for Deep Reinforcement Learning, Mnih et al, 2016.](01_B_Policy_Gradients/07_2016_Mnih.md)
-* [x] [Trust Region Policy Optimization, Schulman et al, 2015.](01_B_Policy_Gradients/08_2015_Schulman.md)
-* [x] [High-Dimensional Continuous Control Using Generalized Advantage Estimation, Schulman et al, 2016. Algorithm: GAE.](01_B_Policy_Gradients/09_2015_Schulman.md)
-* [x] [Proximal Policy Optimization Algorithms, Schulman et al, 2017.](01_B_Policy_Gradients/10_2017_Schulman.md)
-* [x] [Emergence of Locomotion Behaviours in Rich Environments, Heess et al, 2017.](01_B_Policy_Gradients/11_2017_Heess.md)
-* [x] [Scalable trust-region method for deep reinforcement learning using Kronecker-factored approximation, Wu et al, 2017.](01_B_Policy_Gradients/12_2017_Wu.md)
-* [x] [Sample Efficient Actor-Critic with Experience Replay, Wang et al, 2016.](01_B_Policy_Gradients/13_2017_Wang.md)
-* [x] [Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor, Haarnoja et al, 2018. Algorithm: SAC.](01_B_Policy_Gradients/14_2018_Haarnoja.md)
-
-# 1. Model-Free RL: (c) Deterministic Policy Gradients
-* [x] [Deterministic Policy Gradient Algorithms, Silver et al, 2014.](01_C_Deterministic_Policy_Gradients/15_2014_Silver.md)
-* [x] [Continuous Control With Deep Reinforcement Learning, Lillicrap et al, 2015.](01_C_Deterministic_Policy_Gradients/16_2016_Lillicrap.md)
-* [x] [Addressing Function Approximation Error in Actor-Critic Methods, Fujimoto et al, 2018.](01_C_Deterministic_Policy_Gradients/17_2018_Fujimoto.md)
+| Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
+| ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
+13/05/19 #1 - :fire: | Playing Atari with Deep Reinforcement Learning, Mnih et al. | 2013 | Deep Q-Learning | DQN | [Click](https://arxiv.org/pdf/1312.5602.pdf)) | [Click](01_A_Deep_Q_Learning/01_2013_Mnih.md) |
+| 01/12/18 #2 - :fire: | Deep Recurrent Q-Learning for Partially Observable MDPs, Hausknecht and Stone | 2015 | Deep Q-Learning |DRQN | [Click](https://arxiv.org/abs/1507.06527) | [Click](01_A_Deep_Q_Learning/02_2015_Hausknecht.md) |
+16/05/19 #3 - :fire: | Deep Reinforcement Learning with Double Q-learning, van Hasselt et al.| 2015| Deep Q-Learning | DDQN | [Click](https://arxiv.org/abs/1509.06461) | [Click](01_A_Deep_Q_Learning/03_2015_Hasselt.md) |
+| 17/05/19 #4 - :fire:| Prioritized Experience Replay, Schaul et al. | 2016 | Deep Q-Learning | PER | [Click](https://arxiv.org/pdf/1511.05952.pdf) | [Click](01_A_Deep_Q_Learning/04_2016_Schaul.md) |
+| 15/05/19 #5 - :fire: | Dueling Network Architectures for Deep Reinforcement Learning, Wang et al. | 2016 | Deep Q-Learning | Dueling DQN | [Click](https://arxiv.org/pdf/1511.06581) | [Click](01_A_Deep_Q_Learning/05_2016_Wang.md) |
+| 17/05/19 #6 - :fire:| Rainbow: Combining Improvements in Deep Reinforcement Learning, Hessel et al. | 2017 | Deep Q-Learning |Rainbow| [Click](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/viewPDFInterstitial/17204/16680) | [Click](01_A_Deep_Q_Learning/06_2017_Hessel.md) |
+| 24/05/19 #7 - :fire:| Noisy Networks for Exploration, Fortunato et al. | 2018 | Deep Q-Learning | Noisy Nets|[Click](https://arxiv.org/pdf/1706.10295) | [Click](01_A_Deep_Q_Learning/xx_2018_Fortunato.md) |
+| 25/05/19 #8 - :fire:| A General Reinforcement Learning Algorithm that Masters Chess, Shogi and Go through Self-Play, Silver et al. |2019| Deep Q-Learning | AlphaZero | [Click](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Applications_files/alphazero-science.pdf) | [Click](01_A_Deep_Q_Learning/yy_2019_Silver.md) |
+|25/05/019 #9 - :key: | Asynchronous Methods for Deep Reinforcement Learning, Mnih et al. |  2016 | Policy Gradients | A3C | [Click]() | [Click](01_B_Policy_Gradients/07_2016_Mnih.md) |
+|29/05/019 #10 - :key: | Trust Region Policy Optimization, Schulman et al.| 2015 | Policy Gradients | TRPO | [Click](http://www.jmlr.org/proceedings/papers/v48/mniha16.pdf) | [Click](01_B_Policy_Gradients/08_2015_Schulman.md) |
+|11/06/019 #11 - :key: | High-Dimensional Continuous Control Using Generalized Advantage Estimation, Schulman et al. | 2016 | Policy Gradients | GAE | [Click](https://arxiv.org/pdf/1506.02438) | [Click](01_B_Policy_Gradients/09_2015_Schulman.md) |
+|18/06/019 #12 - :key: |Proximal Policy Optimization Algorithms, Schulman et al. | 2017 | Policy Gradients | PPO | [Click](https://arxiv.org/pdf/1707.06347) | [Click](01_B_Policy_Gradients/10_2017_Schulman.md) |
+| 20/06/19 #13 - :key: | Emergence of Locomotion Behaviours in Rich Environments, Heess et al. | 2017 | Policy Gradients | - | [Click](https://arxiv.org/pdf/1707.02286) | [Click](01_B_Policy_Gradients/11_2017_Heess.md) |
+| 20/06/19 #14 - :key: | Scalable trust-region method for deep reinforcement learning using Kronecker-factored approximation, Wu et al. | 2017 | Policy Gradients | ACKTR | [Click](http://papers.nips.cc/paper/7112-scalable-trust-region-method-for-deep-reinforcement-learning-using-kronecker-factored-approximation.pdf) | [Click](01_B_Policy_Gradients/12_2017_Wu.md) |
+| 09/07/19 #15 - :key: | Sample Efficient Actor-Critic with Experience Replay, Wang et al. | 2016 | Policy Gradients | ACER | [Click](https://arxiv.org/pdf/1611.01224) | [Click](01_B_Policy_Gradients/13_2017_Wang.md) |
+| 11/07/19 #16 - :key:| Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor, Haarnoja et al. | 2018 | Policy Gradients | SAC | [Click](https://arxiv.org/pdf/1801.01290) | [Click](01_B_Policy_Gradients/14_2018_Haarnoja.md) |
+| 09/07/19 #17 - :monkey:|  Deterministic Policy Gradient Algorithms, Silver et al. | 2014 | Deterministic PG | DPG | [Click]() | [Click](01_C_Deterministic_Policy_Gradients/15_2014_Silver.md) |
+| 10/07/19 #18 - :monkey:| Continuous Control With Deep Reinforcement Learning, Lillicrap et al. | 2015 | Deterministic PG | DDPG | [Click](http://www.jmlr.org/proceedings/papers/v32/silver14.pdf) | [Click](01_C_Deterministic_Policy_Gradients/16_2016_Lillicrap.md) |
+| 12/07/19 #19 - :monkey:| Addressing Function Approximation Error in Actor-Critic Methods, Fujimoto et al. | 2018 | Deterministic PG | TD3 | [Click](https://arxiv.org/pdf/1802.09477.pdf),) | [Click](01_C_Deterministic_Policy_Gradients/17_2018_Fujimoto.md) |
+| 29/07/19 #20 - :moon:| A Distributional Perspective on Reinforcement Learning, Bellemare et al.| 2017 | Distributional RL | C51 | [Click](https://arxiv.org/pdf/1707.06887) | [Click](01_D_Distributional_RL/18_2017_Bellemare.md) |
+| 31/07/19 #21 - :moon:| Distributional Reinforcement Learning with Quantile Regression, Dabney et al. | 2017 | Distributional RL | QR-DQN| [Click](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/viewPDFInterstitial/17184/16590) | [Click](01_D_Distributional_RL/19_2017_Dabney.md) |
+| 01/08/19 #22 - :moon:| Implicit Quantile Networks for Distributional Reinforcement Learning, Dabney et al. | 2018 | Distributional RL | IQN | [Click](https://arxiv.org/pdf/1806.06923) | [Click](01_D_Distributional_RL/20_2018_Dabney.md) |
+| 02/08/19 #23 - :moon:| Deep Reinforcement Learning and the Deadly Triad, van Hasselt et al. | 2018 | Deep Q-Learning | - | [Click](https://arxiv.org/abs/1812.02648) | [Click](01_D_Distributional_RL/aa_2018_Hasselt.md) |
 
 # 1. Model-Free RL: (d) Distributional RL
-* [x] [A Distributional Perspective on Reinforcement Learning, Bellemare et al, 2017.](01_D_Distributional_RL/18_2017_Bellemare.md)
-* [x] [Distributional Reinforcement Learning with Quantile Regression, Dabney et al, 2017.](01_D_Distributional_RL/19_2017_Dabney.md)
-* [x] [Implicit Quantile Networks for Distributional Reinforcement Learning, Dabney et al, 2018.](01_D_Distributional_RL/20_2018_Dabney.md)
 * [ ] Dopamine: A Research Framework for Deep Reinforcement Learning, Anonymous, 2018.
 
-**Supplementing Papers**
-
-* [ ] Deep Reinforcement Learning and the Deadly Triad, van Hasselt et al., 2018
 
 # 1. Model-Free RL: (e) Policy Gradients with Action-Dependent Baselines
 * [ ] Q-Prop: Sample-Efficient Policy Gradient with An Off-Policy Critic, Gu et al, 2016. Algorithm: Q-Prop.
