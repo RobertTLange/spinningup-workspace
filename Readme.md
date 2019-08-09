@@ -7,7 +7,7 @@ Here are all papers and the corresponding notes that I got to read so far:
 
 | Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
 | ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
-13/05/19 #1 - :fire: | Playing Atari with Deep Reinforcement Learning, Mnih et al. | 2013 | Deep Q-Learning | DQN | [Click](https://arxiv.org/pdf/1312.5602.pdf)) | [Click](01_A_Deep_Q_Learning/01_2013_Mnih.md) |
+13/05/19 #1 - :fire: | Playing Atari with Deep Reinforcement Learning, Mnih et al. | 2013 | Deep Q-Learning | DQN | [Click](https://arxiv.org/pdf/1312.5602.pdf) | [Click](01_A_Deep_Q_Learning/01_2013_Mnih.md) |
 | 01/12/18 #2 - :fire: | Deep Recurrent Q-Learning for Partially Observable MDPs, Hausknecht and Stone | 2015 | Deep Q-Learning |DRQN | [Click](https://arxiv.org/abs/1507.06527) | [Click](01_A_Deep_Q_Learning/02_2015_Hausknecht.md) |
 16/05/19 #3 - :fire: | Deep Reinforcement Learning with Double Q-learning, van Hasselt et al.| 2015| Deep Q-Learning | DDQN | [Click](https://arxiv.org/abs/1509.06461) | [Click](01_A_Deep_Q_Learning/03_2015_Hasselt.md) |
 | 17/05/19 #4 - :fire:| Prioritized Experience Replay, Schaul et al. | 2016 | Deep Q-Learning | PER | [Click](https://arxiv.org/pdf/1511.05952.pdf) | [Click](01_A_Deep_Q_Learning/04_2016_Schaul.md) |
@@ -25,11 +25,12 @@ Here are all papers and the corresponding notes that I got to read so far:
 | 11/07/19 #16 - :key:| Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor, Haarnoja et al. | 2018 | Policy Gradients | SAC | [Click](https://arxiv.org/pdf/1801.01290) | [Click](01_B_Policy_Gradients/14_2018_Haarnoja.md) |
 | 09/07/19 #17 - :monkey:|  Deterministic Policy Gradient Algorithms, Silver et al. | 2014 | Deterministic PG | DPG | [Click]() | [Click](01_C_Deterministic_Policy_Gradients/15_2014_Silver.md) |
 | 10/07/19 #18 - :monkey:| Continuous Control With Deep Reinforcement Learning, Lillicrap et al. | 2015 | Deterministic PG | DDPG | [Click](http://www.jmlr.org/proceedings/papers/v32/silver14.pdf) | [Click](01_C_Deterministic_Policy_Gradients/16_2016_Lillicrap.md) |
-| 12/07/19 #19 - :monkey:| Addressing Function Approximation Error in Actor-Critic Methods, Fujimoto et al. | 2018 | Deterministic PG | TD3 | [Click](https://arxiv.org/pdf/1802.09477.pdf),) | [Click](01_C_Deterministic_Policy_Gradients/17_2018_Fujimoto.md) |
+| 12/07/19 #19 - :monkey:| Addressing Function Approximation Error in Actor-Critic Methods, Fujimoto et al. | 2018 | Deterministic PG | TD3 | [Click](https://arxiv.org/pdf/1802.09477.pdf) | [Click](01_C_Deterministic_Policy_Gradients/17_2018_Fujimoto.md) |
 | 29/07/19 #20 - :moon:| A Distributional Perspective on Reinforcement Learning, Bellemare et al.| 2017 | Distributional RL | C51 | [Click](https://arxiv.org/pdf/1707.06887) | [Click](01_D_Distributional_RL/18_2017_Bellemare.md) |
 | 31/07/19 #21 - :moon:| Distributional Reinforcement Learning with Quantile Regression, Dabney et al. | 2017 | Distributional RL | QR-DQN| [Click](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/viewPDFInterstitial/17184/16590) | [Click](01_D_Distributional_RL/19_2017_Dabney.md) |
 | 01/08/19 #22 - :moon:| Implicit Quantile Networks for Distributional Reinforcement Learning, Dabney et al. | 2018 | Distributional RL | IQN | [Click](https://arxiv.org/pdf/1806.06923) | [Click](01_D_Distributional_RL/20_2018_Dabney.md) |
 | 02/08/19 #23 - :moon:| Deep Reinforcement Learning and the Deadly Triad, van Hasselt et al. | 2018 | Deep Q-Learning | - | [Click](https://arxiv.org/abs/1812.02648) | [Click](01_D_Distributional_RL/aa_2018_Hasselt.md) |
+| 09/08/19 #23 - :moon:| Towards Characterizing Divergence in Deep Q Learning, Achiam et al. | 2019 | Deep Q-Learning | - | [Click](https://arxiv.org/abs/1903.08894) | [Click](01_D_Distributional_RL/bb_2019_Achiam.md) |
 
 # 1. Model-Free RL: (d) Distributional RL
 * [ ] Dopamine: A Research Framework for Deep Reinforcement Learning, Anonymous, 2018.
