@@ -30,7 +30,8 @@ Here are all papers and the corresponding notes that I got to read so far:
 | 31/07/19 #21 - :moon:| Distributional Reinforcement Learning with Quantile Regression, Dabney et al. | 2017 | Distributional RL | QR-DQN| [Click](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/viewPDFInterstitial/17184/16590) | [Click](01_D_Distributional_RL/19_2017_Dabney.md) |
 | 01/08/19 #22 - :moon:| Implicit Quantile Networks for Distributional Reinforcement Learning, Dabney et al. | 2018 | Distributional RL | IQN | [Click](https://arxiv.org/pdf/1806.06923) | [Click](01_D_Distributional_RL/20_2018_Dabney.md) |
 | 02/08/19 #23 - :moon:| Deep Reinforcement Learning and the Deadly Triad, van Hasselt et al. | 2018 | Deep Q-Learning | - | [Click](https://arxiv.org/abs/1812.02648) | [Click](01_D_Distributional_RL/aa_2018_Hasselt.md) |
-| 09/08/19 #23 - :moon:| Towards Characterizing Divergence in Deep Q Learning, Achiam et al. | 2019 | Deep Q-Learning | - | [Click](https://arxiv.org/abs/1903.08894) | [Click](01_D_Distributional_RL/bb_2019_Achiam.md) |
+| 09/08/19 #24 - :moon:| Towards Characterizing Divergence in Deep Q Learning, Achiam et al. | 2019 | Deep Q-Learning | PreQN | [Click](https://arxiv.org/abs/1903.08894) | [Click](01_D_Distributional_RL/bb_2019_Achiam.md) |
+| 10/08/19 #25 - :moon:| Non-Delusional Q-Learning and Value Iteration| 2019 | Deep Q-Learning | PCVI/PCQL | [Click](https://papers.nips.cc/paper/8200-non-delusional-q-learning-and-value-iteration.pdf) | [Click](01_D_Distributional_RL/cc_2018_Lu.md) |
 
 # 1. Model-Free RL: (d) Distributional RL
 * [ ] Dopamine: A Research Framework for Deep Reinforcement Learning, Anonymous, 2018.
