@@ -5,6 +5,7 @@ In this repository I document my self-study of Deep Reinforcement Learning. More
 
 Here are all papers and the corresponding notes that I got to read so far:
 
+# 1. Deep Q-Learning
 | Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
 | ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
 13/05/19 #1 - :fire: | Playing Atari with Deep Reinforcement Learning, Mnih et al. | 2013 | Deep Q-Learning | DQN | [Click](https://arxiv.org/pdf/1312.5602.pdf) | [Click](01_A_Deep_Q_Learning/01_2013_Mnih.md) |
@@ -15,6 +16,17 @@ Here are all papers and the corresponding notes that I got to read so far:
 | 17/05/19 #6 - :fire:| Rainbow: Combining Improvements in Deep Reinforcement Learning, Hessel et al. | 2017 | Deep Q-Learning |Rainbow| [Click](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/viewPDFInterstitial/17204/16680) | [Click](01_A_Deep_Q_Learning/06_2017_Hessel.md) |
 | 24/05/19 #7 - :fire:| Noisy Networks for Exploration, Fortunato et al. | 2018 | Deep Q-Learning | Noisy Nets|[Click](https://arxiv.org/pdf/1706.10295) | [Click](01_A_Deep_Q_Learning/xx_2018_Fortunato.md) |
 | 25/05/19 #8 - :fire:| A General Reinforcement Learning Algorithm that Masters Chess, Shogi and Go through Self-Play, Silver et al. |2019| Deep Q-Learning | AlphaZero | [Click](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Applications_files/alphazero-science.pdf) | [Click](01_A_Deep_Q_Learning/yy_2019_Silver.md) |
+| 29/07/19 #20 - :moon:| A Distributional Perspective on Reinforcement Learning, Bellemare et al.| 2017 | Distributional RL | C51 | [Click](https://arxiv.org/pdf/1707.06887) | [Click](01_D_Distributional_RL/18_2017_Bellemare.md) |
+| 31/07/19 #21 - :moon:| Distributional Reinforcement Learning with Quantile Regression, Dabney et al. | 2017 | Distributional RL | QR-DQN| [Click](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/viewPDFInterstitial/17184/16590) | [Click](01_D_Distributional_RL/19_2017_Dabney.md) |
+| 01/08/19 #22 - :moon:| Implicit Quantile Networks for Distributional Reinforcement Learning, Dabney et al. | 2018 | Distributional RL | IQN | [Click](https://arxiv.org/pdf/1806.06923) | [Click](01_D_Distributional_RL/20_2018_Dabney.md) |
+| 02/08/19 #23 - :moon:| Deep Reinforcement Learning and the Deadly Triad, van Hasselt et al. | 2018 | Deep Q-Learning | - | [Click](https://arxiv.org/abs/1812.02648) | [Click](01_D_Distributional_RL/aa_2018_Hasselt.md) |
+| 09/08/19 #24 - :moon:| Towards Characterizing Divergence in Deep Q Learning, Achiam et al. | 2019 | Deep Q-Learning | PreQN | [Click](https://arxiv.org/abs/1903.08894) | [Click](01_D_Distributional_RL/bb_2019_Achiam.md) |
+| 10/08/19 #25 - :moon:| Non-Delusional Q-Learning and Value Iteration, Lu et al. | 2019 | Deep Q-Learning | PCVI/PCQL | [Click](https://papers.nips.cc/paper/8200-non-delusional-q-learning-and-value-iteration.pdf) | [Click](01_D_Distributional_RL/cc_2018_Lu.md) |
+| 15/08/19 #26 - :moon:| Ray Interference: A source of plateaus in DRL, Schaul et al. | 2019 | Deep Q-Learning | - | [Click](https://arxiv.org/abs/1904.11455) | [Click](01_D_Distributional_RL/dd_2019_Schaul.md) |
+
+# 2. Policy Gradient Methods
+| Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
+| ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
 |25/05/019 #9 - :key: | Asynchronous Methods for Deep Reinforcement Learning, Mnih et al. |  2016 | Policy Gradients | A3C | [Click]() | [Click](01_B_Policy_Gradients/07_2016_Mnih.md) |
 |29/05/019 #10 - :key: | Trust Region Policy Optimization, Schulman et al.| 2015 | Policy Gradients | TRPO | [Click](http://www.jmlr.org/proceedings/papers/v48/mniha16.pdf) | [Click](01_B_Policy_Gradients/08_2015_Schulman.md) |
 |11/06/019 #11 - :key: | High-Dimensional Continuous Control Using Generalized Advantage Estimation, Schulman et al. | 2016 | Policy Gradients | GAE | [Click](https://arxiv.org/pdf/1506.02438) | [Click](01_B_Policy_Gradients/09_2015_Schulman.md) |
@@ -26,15 +38,10 @@ Here are all papers and the corresponding notes that I got to read so far:
 | 09/07/19 #17 - :monkey:|  Deterministic Policy Gradient Algorithms, Silver et al. | 2014 | Deterministic PG | DPG | [Click]() | [Click](01_C_Deterministic_Policy_Gradients/15_2014_Silver.md) |
 | 10/07/19 #18 - :monkey:| Continuous Control With Deep Reinforcement Learning, Lillicrap et al. | 2015 | Deterministic PG | DDPG | [Click](http://www.jmlr.org/proceedings/papers/v32/silver14.pdf) | [Click](01_C_Deterministic_Policy_Gradients/16_2016_Lillicrap.md) |
 | 12/07/19 #19 - :monkey:| Addressing Function Approximation Error in Actor-Critic Methods, Fujimoto et al. | 2018 | Deterministic PG | TD3 | [Click](https://arxiv.org/pdf/1802.09477.pdf) | [Click](01_C_Deterministic_Policy_Gradients/17_2018_Fujimoto.md) |
-| 29/07/19 #20 - :moon:| A Distributional Perspective on Reinforcement Learning, Bellemare et al.| 2017 | Distributional RL | C51 | [Click](https://arxiv.org/pdf/1707.06887) | [Click](01_D_Distributional_RL/18_2017_Bellemare.md) |
-| 31/07/19 #21 - :moon:| Distributional Reinforcement Learning with Quantile Regression, Dabney et al. | 2017 | Distributional RL | QR-DQN| [Click](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/viewPDFInterstitial/17184/16590) | [Click](01_D_Distributional_RL/19_2017_Dabney.md) |
-| 01/08/19 #22 - :moon:| Implicit Quantile Networks for Distributional Reinforcement Learning, Dabney et al. | 2018 | Distributional RL | IQN | [Click](https://arxiv.org/pdf/1806.06923) | [Click](01_D_Distributional_RL/20_2018_Dabney.md) |
-| 02/08/19 #23 - :moon:| Deep Reinforcement Learning and the Deadly Triad, van Hasselt et al. | 2018 | Deep Q-Learning | - | [Click](https://arxiv.org/abs/1812.02648) | [Click](01_D_Distributional_RL/aa_2018_Hasselt.md) |
-| 09/08/19 #24 - :moon:| Towards Characterizing Divergence in Deep Q Learning, Achiam et al. | 2019 | Deep Q-Learning | PreQN | [Click](https://arxiv.org/abs/1903.08894) | [Click](01_D_Distributional_RL/bb_2019_Achiam.md) |
-| 10/08/19 #25 - :moon:| Non-Delusional Q-Learning and Value Iteration, Lu et al. | 2019 | Deep Q-Learning | PCVI/PCQL | [Click](https://papers.nips.cc/paper/8200-non-delusional-q-learning-and-value-iteration.pdf) | [Click](01_D_Distributional_RL/cc_2018_Lu.md) |
-| 15/08/19 #26 - :moon:| Ray Interference: A source of plateaus in DRL, Schaul et al. | 2019 | Deep Q-Learning | - | [Click](https://arxiv.org/abs/1904.11455) | [Click](01_D_Distributional_RL/dd_2019_Schaul.md) |
+
 
 # 1. Model-Free RL: (d) Distributional RL
+
 * [ ] Dopamine: A Research Framework for Deep Reinforcement Learning, Anonymous, 2018.
 
 
@@ -55,3 +62,126 @@ Here are all papers and the corresponding notes that I got to read so far:
 
 # 1. Model-Free RL: (h) Evolutionary Algorithms
 * [ ] Evolution Strategies as a Scalable Alternative to Reinforcement Learning, Salimans et al, 2017.
+
+# 2. Exploration
+
+| Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
+| ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
+| # :question: | VIME: Variational Information Maximizing Exploration, Houthooft et al, 2016. Algorithm: VIME. |   |  |  | [Click]() | [Click]() |
+| # :question: | Unifying Count-Based Exploration and Intrinsic Motivation, Bellemare et al, 2016. Algorithm: CTS-based Pseudocounts. |   |  |  | [Click]() | [Click]() |
+| # :question: | Count-Based Exploration with Neural Density Models, Ostrovski et al, 2017. Algorithm: PixelCNN-based Pseudocounts. |   |  |  | [Click]() | [Click]() |
+| # :question: |Exploration: A Study of Count-Based Exploration for Deep Reinforcement Learning, Tang et al, 2016. Algorithm: Hash-based Counts. |   |  |  | [Click]() | [Click]() |
+| # :question: | EX2: Exploration with Exemplar Models for Deep Reinforcement Learning, Fu et al, 2017. Algorithm: EX2. |   |  |  | [Click]() | [Click]() |
+| # :question: | Curiosity-driven Exploration by Self-supervised Prediction, Pathak et al, 2017. Algorithm: Intrinsic Curiosity Module (ICM). |   |  |  | [Click]() | [Click]() |
+| # :question: | Large-Scale Study of Curiosity-Driven Learning, Burda et al, 2018. Contribution: Systematic analysis of how surprisal-based intrinsic motivation performs in a wide variety of environments. |   |  |  | [Click]() | [Click]() |
+| # :question: | Exploration by Random Network Distillation, Burda et al, 2018. Algorithm: RND. |   |  |  | [Click]() | [Click]() |
+| # :question: | Variational Intrinsic Control, Gregor et al, 2016. Algorithm: VIC. |   |  |  | [Click]() | [Click]() |
+| # :question: | Diversity is All You Need: Learning Skills without a Reward Function, Eysenbach et al, 2018. Algorithm: DIAYN. |   |  |  | [Click]() | [Click]() |
+| # :question: | Variational Option Discovery Algorithms, Achiam et al, 2018. Algorithm: VALOR. |   |  |  | [Click]() | [Click]() |
+
+# 3. Transfer and Multitask RL
+| Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
+| ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
+| # :question: | Progressive Neural Networks, Rusu et al, 2016. Algorithm: Progressive Networks. |   |  |  | [Click]() | [Click]() |
+| # :question: | Universal Value Function Approximators, Schaul et al, 2015. Algorithm: UVFA. |   |  |  | [Click]() | [Click]() |
+| 04/11/19 #3 - :smile: | Reinforcement Learning with Unsupervised Auxiliary Tasks, Jaderberg et al | 2016 | Auxiliary | UNREAL | [Click](https://arxiv.org/abs/1611.05397) | [Click](03_Transfer_and_Multitask_RL/03_2016_Jaderberg.md) |
+| # :question: | The Intentional Unintentional Agent: Learning to Solve Many Continuous Control Tasks Simultaneously, Cabi et al, 2017. Algorithm: IU Agent. |   |  |  | [Click]() | [Click]() |
+| # :question: | PathNet: Evolution Channels Gradient Descent in Super Neural Networks, Fernando et al, 2017. Algorithm: PathNet. |   |  |  | [Click]() | [Click]() |
+| # :question: | Mutual Alignment Transfer Learning, Wulfmeier et al, 2017. Algorithm: MATL. |   |  |  | [Click]() | [Click]() |
+| # :question: | Learning an Embedding Space for Transferable Robot Skills, Hausman et al, 2018. |   |  |  | [Click]() | [Click]() |
+| # :question: | Hindsight Experience Replay, Andrychowicz et al, 2017. Algorithm: Hindsight Experience Replay (HER). |   |  |  | [Click]() | [Click]() |
+
+# 4. Hierarchy
+| Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
+| ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
+| # :question: | Strategic Attentive Writer for Learning Macro-Actions, Vezhnevets et al, 2016. Algorithm: STRAW. |   |  |  | [Click]() | [Click]() |
+| # :question: | FeUdal Networks for Hierarchical Reinforcement Learning, Vezhnevets et al, 2017. Algorithm: Feudal Networks |   |  |  | [Click]() | [Click]() |
+| # :question: | Data-Efficient Hierarchical Reinforcement Learning, Nachum et al, 2018. Algorithm: HIRO. |   |  |  | [Click]() | [Click]() |
+
+# 5. Memory
+| Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
+| ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
+| # :question: | Model-Free Episodic Control, Blundell et al, 2016. Algorithm: MFEC. |   |  |  | [Click]() | [Click]() |
+| # :question: | Neural Episodic Control, Pritzel et al, 2017. Algorithm: NEC. |   |  |  | [Click]() | [Click]() |
+| # :question: | Neural Map: Structured Memory for Deep Reinforcement Learning, Parisotto and Salakhutdinov, 2017. Algorithm: Neural Map. |   |  |  | [Click]() | [Click]() |
+| # :question: | Unsupervised Predictive Memory in a Goal-Directed Agent, Wayne et al, 2018. Algorithm: MERLIN. |   |  |  | [Click]() | [Click]() |
+| # :question: | Relational Recurrent Neural Networks, Santoro et al, 2018. Algorithm: RMC. |   |  |  | [Click]() | [Click]() |
+
+# 6. Model-Based RL
+| Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
+| ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
+| # :question: | Imagination-Augmented Agents for Deep Reinforcement Learning, Weber et al, 2017. Algorithm: I2A. |   |  |  | [Click]() | [Click]() |
+| # :question: | Neural Network Dynamics for Model-Based Deep Reinforcement Learning with Model-Free Fine-Tuning, Nagabandi et al, 2017. Algorithm: MBMF. |   |  |  | [Click]() | [Click]() |
+| # :question: | Model-Based Value Expansion for Efficient Model-Free Reinforcement Learning, Feinberg et al, 2018. Algorithm: MVE. |   |  |  | [Click]() | [Click]() |
+| # :question: | Sample-Efficient Reinforcement Learning with Stochastic Ensemble Value Expansion, Buckman et al, 2018. Algorithm: STEVE. |   |  |  | [Click]() | [Click]() |
+| # :question: | Model-Ensemble Trust-Region Policy Optimization, Kurutach et al, 2018. Algorithm: ME-TRPO. |   |  |  | [Click]() | [Click]() |
+| # :question: | Model-Based Reinforcement Learning via Meta-Policy Optimization, Clavera et al, 2018. Algorithm: MB-MPO. |   |  |  | [Click]() | [Click]() |
+| # :question: | Recurrent World Models Facilitate Policy Evolution, Ha and Schmidhuber, 2018. |   |  |  | [Click]() | [Click]() |
+| # :question: | Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm, Silver et al, 2017. Algorithm: AlphaZero. |   |  |  | [Click]() | [Click]() |
+| # :question: | Thinking Fast and Slow with Deep Learning and Tree Search, Anthony et al, 2017. Algorithm: ExIt. |   |  |  | [Click]() | [Click]() |
+
+# 7. Meta-RL
+| Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
+| ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
+| # :question: | RL^2: Fast Reinforcement Learning via Slow Reinforcement Learning, Duan et al, 2016. Algorithm: RL^2. |   |  |  | [Click]() | [Click]() |
+| # :question: | Learning to Reinforcement Learn, Wang et al, 2016. |   |  |  | [Click]() | [Click]() |
+| # :question: | Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks, Finn et al, 2017. Algorithm: MAML. |   |  |  | [Click]() | [Click]() |
+| # :question: | A Simple Neural Attentive Meta-Learner, Mishra et al, 2018. Algorithm: SNAIL. |   |  |  | [Click]() | [Click]() |
+
+# 8. Scaling RL
+| Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
+| ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
+| # :question: | Accelerated Methods for Deep Reinforcement Learning, Stooke and Abbeel, 2018. Contribution: Systematic analysis of parallelization in deep RL across algorithms. |   |  |  | [Click]() | [Click]() |
+| # :question: | IMPALA: Scalable Distributed Deep-RL with Importance Weighted Actor-Learner Architectures, Espeholt et al, 2018. Algorithm: IMPALA. |   |  |  | [Click]() | [Click]() |
+| # :question: | Distributed Prioritized Experience Replay, Horgan et al, 2018. Algorithm: Ape-X. |   |  |  | [Click]() | [Click]() |
+| # :question: | Recurrent Experience Replay in Distributed Reinforcement Learning, Anonymous, 2018. Algorithm: R2D2. |   |  |  | [Click]() | [Click]() |
+| # :question: | RLlib: Abstractions for Distributed Reinforcement Learning, Liang et al, 2017. Contribution: A scalable library of RL algorithm implementations. Documentation link. |   |  |  | [Click]() | [Click]() |
+
+# 9. RL in the Real World
+| Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
+| ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
+| # :question: | Benchmarking Reinforcement Learning Algorithms on Real-World Robots, Mahmood et al, 2018. |   |  |  | [Click]() | [Click]() |
+| # :question: | Learning Dexterous In-Hand Manipulation, OpenAI, 2018. |   |  |  | [Click]() | [Click]() |
+| # :question: | QT-Opt: Scalable Deep Reinforcement Learning for Vision-Based Robotic Manipulation, Kalashnikov et al, 2018. Algorithm: QT-Opt. |   |  |  | [Click]() | [Click]() |
+| # :question: | Horizon: Facebook’s Open Source Applied Reinforcement Learning Platform, Gauci et al, 2018. |   |  |  | [Click]() | [Click]() |
+
+# 10. Safety
+| Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
+| ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
+| # :question: | Concrete Problems in AI Safety, Amodei et al, 2016. Contribution: establishes a taxonomy of safety problems, serving as an important jumping-off point for future research. We need to solve these! |   |  |  | [Click]() | [Click]() |
+| # :question: | Deep Reinforcement Learning From Human Preferences, Christiano et al, 2017. Algorithm: LFP.|   |  |  | [Click]() | [Click]() |
+| # :question: | Constrained Policy Optimization, Achiam et al, 2017. Algorithm: CPO. |   |  |  | [Click]() | [Click]() |
+| # :question: | Safe Exploration in Continuous Action Spaces, Dalal et al, 2018. Algorithm: DDPG+Safety Layer. |   |  |  | [Click]() | [Click]() |
+| # :question: | Trial without Error: Towards Safe Reinforcement Learning via Human Intervention, Saunders et al, 2017. Algorithm: HIRL. |   |  |  | [Click]() | [Click]() |
+| # :question: | Leave No Trace: Learning to Reset for Safe and Autonomous Reinforcement Learning, Eysenbach et al, 2017. Algorithm: Leave No Trace. |   |  |  | [Click]() | [Click]() |
+
+# 11. Imitation Learning and Inverse Reinforcement Learning
+| Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
+| ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
+| # :question: | Modeling Purposeful Adaptive Behavior with the Principle of Maximum Causal Entropy, Ziebart 2010. Contributions: Crisp formulation of maximum entropy IRL. |   |  |  | [Click]() | [Click]() |
+| # :question: | Guided Cost Learning: Deep Inverse Optimal Control via Policy Optimization, Finn et al, 2016. Algorithm: GCL. |   |  |  | [Click]() | [Click]() |
+| # :question: | Generative Adversarial Imitation Learning, Ho and Ermon, 2016. Algorithm: GAIL. |   |  |  | [Click]() | [Click]() |
+| # :question: | DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills, Peng et al, 2018. Algorithm: DeepMimic. |   |  |  | [Click]() | [Click]() |
+| # :question: | Variational Discriminator Bottleneck: Improving Imitation Learning, Inverse RL, and GANs by Constraining Information Flow, Peng et al, 2018. Algorithm: VAIL.|   |  |  | [Click]() | [Click]() |
+| # :question: | One-Shot High-Fidelity Imitation: Training Large-Scale Deep Nets with RL, Le Paine et al, 2018. Algorithm: MetaMimic.|   |  |  | [Click]() | [Click]() |
+
+# 12. Reproducibility, Analysis, and Critique
+| Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
+| ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
+| # :question: | Benchmarking Deep Reinforcement Learning for Continuous Control, Duan et al, 2016. Contribution: rllab. |   |  |  | [Click]() | [Click]() |
+| # :question: | Reproducibility of Benchmarked Deep Reinforcement Learning Tasks for Continuous Control, Islam et al, 2017. |   |  |  | [Click]() | [Click]() |
+| # :question: | Deep Reinforcement Learning that Matters, Henderson et al, 2017.
+| # :question: | Where Did My Optimum Go?: An Empirical Analysis of Gradient Descent Optimization in Policy Gradient Methods, Henderson et al, 2018. |   |  |  | [Click]() | [Click]() |
+| # :question: | Are Deep Policy Gradient Algorithms Truly Policy Gradient Algorithms?, Ilyas et al, 2018. |   |  |  | [Click]() | [Click]() |
+| # :question: | Simple Random Search Provides a Competitive Approach to Reinforcement Learning, Mania et al, 2018. |   |  |  | [Click]() | [Click]() |
+| # :question: | Benchmarking Model-Based Reinforcement Learning, Wang et al, 2019. |   |  |  | [Click]() | [Click]() |
+
+# 13. Bonus: Classic Papers in RL Theory or Review
+| Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
+| ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
+| # :question: | Policy Gradient Methods for Reinforcement Learning with Function Approximation, Sutton et al, 2000. Contributions: Established policy gradient theorem and showed convergence of policy gradient algorithm for arbitrary policy classes. |   |  |  | [Click]() | [Click]() |
+| # :question: | An Analysis of Temporal-Difference Learning with Function Approximation, Tsitsiklis and Van Roy, 1997. Contributions: Variety of convergence results and counter-examples for value-learning methods in RL. |   |  |  | [Click]() | [Click]() |
+| # :question: | Reinforcement Learning of Motor Skills with Policy Gradients, Peters and Schaal, 2008. Contributions: Thorough review of policy gradient methods at the time, many of which are still serviceable descriptions of deep RL methods. |   |  |  | [Click]() | [Click]() |
+| # :question: | Approximately Optimal Approximate Reinforcement Learning, Kakade and Langford, 2002. Contributions: Early roots for monotonic improvement theory, later leading to theoretical justification for TRPO and other algorithms. |   |  |  | [Click]() | [Click]() |
+| # :question: | A Natural Policy Gradient, Kakade, 2002. Contributions: Brought natural gradients into RL, later leading to TRPO, ACKTR, and several other methods in deep RL. |   |  |  | [Click]() | [Click]() |
+| # :question: | Algorithms for Reinforcement Learning, Szepesvari, 2009. Contributions: Unbeatable reference on RL before deep RL, containing foundations and theoretical background. |   |  |  | [Click]() | [Click]() |
