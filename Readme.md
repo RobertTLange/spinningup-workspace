@@ -140,6 +140,7 @@ Here are all papers and the corresponding notes that I got to read so far:
 # 9. RL in the Real World
 | Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
 | ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
+| #1 :smile: | Solving Rubik's Cubes with a Robotic Hand | 2019 | Robotics | ADR | [Click](https://arxiv.org/abs/1910.07113) | [Click](09_Real_RL/01_2019_Akkaya.pdf) |
 | # :question: | Benchmarking Reinforcement Learning Algorithms on Real-World Robots, Mahmood et al, 2018. |   |  |  | [Click]() | [Click]() |
 | # :question: | Learning Dexterous In-Hand Manipulation, OpenAI, 2018. |   |  |  | [Click]() | [Click]() |
 | # :question: | QT-Opt: Scalable Deep Reinforcement Learning for Vision-Based Robotic Manipulation, Kalashnikov et al, 2018. Algorithm: QT-Opt. |   |  |  | [Click]() | [Click]() |
