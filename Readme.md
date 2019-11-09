@@ -158,6 +158,7 @@ Here are all papers and the corresponding notes that I got to read so far:
 # 11. Imitation Learning and Inverse Reinforcement Learning
 | Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
 | ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
+| 05/11/19 #1 - :smile: | Distilling Policy Distillation, Czarnecki et al. | 2019 | Distillation | ExpEntropyReg | [Click](https://arxiv.org/abs/1902.02186) | [Click](11_IRL/01_2019_Czarnecki.md) |
 | # :question: | Modeling Purposeful Adaptive Behavior with the Principle of Maximum Causal Entropy, Ziebart 2010. Contributions: Crisp formulation of maximum entropy IRL. |   |  |  | [Click]() | [Click]() |
 | # :question: | Guided Cost Learning: Deep Inverse Optimal Control via Policy Optimization, Finn et al, 2016. Algorithm: GCL. |   |  |  | [Click]() | [Click]() |
 | # :question: | Generative Adversarial Imitation Learning, Ho and Ermon, 2016. Algorithm: GAIL. |   |  |  | [Click]() | [Click]() |
