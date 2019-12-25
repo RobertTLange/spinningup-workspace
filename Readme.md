@@ -132,6 +132,7 @@ Here are all papers and the corresponding notes that I got to read so far:
 | Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
 | ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
 | # :smile: | Human-Level performance in first-person multiplayer games with population-based DRL, Jaderberg et al. | 2018 | Multi-Agent | PBT | [Click](https://arxiv.org/abs/1807.01281) | [Click](08_Scaling_RL/01_2018_Jaderberg.md) |
+| # :smile: | Grandmaster level in Starcraft II using MARL, Vinyals et al. | 2019 | Multi-Agent | League | [Click](https://deepmind.com/blog/article/AlphaStar-Grandmaster-level-in-StarCraft-II-using-multi-agent-reinforcement-learning) | [Click](08_Scaling_RL/02_2019_Vinyals.md) |
 | # :question: | Accelerated Methods for Deep Reinforcement Learning, Stooke and Abbeel, 2018. Contribution: Systematic analysis of parallelization in deep RL across algorithms. |   |  |  | [Click]() | [Click]() |
 | # :question: | IMPALA: Scalable Distributed Deep-RL with Importance Weighted Actor-Learner Architectures, Espeholt et al, 2018. Algorithm: IMPALA. |   |  |  | [Click]() | [Click]() |
 | # :question: | Distributed Prioritized Experience Replay, Horgan et al, 2018. Algorithm: Ape-X. |   |  |  | [Click]() | [Click]() |
