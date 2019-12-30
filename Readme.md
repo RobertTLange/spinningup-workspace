@@ -182,7 +182,12 @@ Here are all papers and the corresponding notes that I got to read so far:
 | # :question: | Simple Random Search Provides a Competitive Approach to Reinforcement Learning, Mania et al, 2018. |   |  |  | [Click]() | [Click]() |
 | # :question: | Benchmarking Model-Based Reinforcement Learning, Wang et al, 2019. |   |  |  | [Click]() | [Click]() |
 
-# 13. Bonus: Classic Papers in RL Theory or Review
+# 13. Multi-Agent RL
+| Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
+| ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
+| # :smile: | Social Influence as Intrinsic Motivation for MA-DRL, Jaques et al. | 2019 | Social Influence | MOA | [Click](https://arxiv.org/abs/1810.08647) | [Click](13_MARL/2019_Jaques.md) |
+
+# 14. Bonus: Classic Papers in RL Theory or Review
 | Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
 | ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
 | # :question: | Policy Gradient Methods for Reinforcement Learning with Function Approximation, Sutton et al, 2000. Contributions: Established policy gradient theorem and showed convergence of policy gradient algorithm for arbitrary policy classes. |   |  |  | [Click]() | [Click]() |
