@@ -111,6 +111,7 @@ Here are all papers and the corresponding notes that I got to read so far:
 # 6. Model-Based RL
 | Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
 | ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
+| 30/12/19 # :smile: |  Dream to Control: Learning Behaviors by Latent Imagination, Hafner et al. |  2019 | Model Learning | Dreamer | [Click](https://arxiv.org/pdf/1912.01603.pdf) | [Click](06_Model_Based/2019_Hafner.md) |
 | # :question: | Imagination-Augmented Agents for Deep Reinforcement Learning, Weber et al, 2017. Algorithm: I2A. |   |  |  | [Click]() | [Click]() |
 | # :question: | Neural Network Dynamics for Model-Based Deep Reinforcement Learning with Model-Free Fine-Tuning, Nagabandi et al, 2017. Algorithm: MBMF. |   |  |  | [Click]() | [Click]() |
 | # :question: | Model-Based Value Expansion for Efficient Model-Free Reinforcement Learning, Feinberg et al, 2018. Algorithm: MVE. |   |  |  | [Click]() | [Click]() |
