@@ -126,6 +126,7 @@ Here are all papers and the corresponding notes that I got to read so far:
 | Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
 | ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
 | 14/11/19 - #1 :smile: | RL^2: Fast Reinforcement Learning via Slow Reinforcement Learning, Duan et al, 2016. Algorithm: RL^2. |   |  |  | [Click]() | [Click]() |
+| 06/01/20 - #2 :smile: | Meta-Learners' Learning Dynamics are unlike learners', Rabinowitz | 2019 | Learning Dynamics | - | [Click](https://arxiv.org/abs/1905.01320) | [Click](07_Meta_RL/2019_Rabinowitz.md) |
 | # :question: | Learning to Reinforcement Learn, Wang et al, 2016. |   |  |  | [Click]() | [Click]() |
 | # :question: | Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks, Finn et al, 2017. Algorithm: MAML. |   |  |  | [Click]() | [Click]() |
 | # :question: | A Simple Neural Attentive Meta-Learner, Mishra et al, 2018. Algorithm: SNAIL. |   |  |  | [Click]() | [Click]() |
