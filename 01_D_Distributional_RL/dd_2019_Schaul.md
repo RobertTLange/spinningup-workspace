@@ -3,7 +3,7 @@
 # Author: Schaul et al (2019) (DeepMind)
 
 #### General Content:
-Ray interference is a phenomenon observed in (multi-objective) DRL when learning dynamics travel through a sequence of plateaus. This is caused by a coupling of learning and data generation arising due to on-policy rollouts. This constrains the agent to learn one thing at a time when parallelization is better. The authors derive a relationship to dynamical systems and show a relationship to saddle points,
+Ray interference is a phenomenon observed in (multi-objective) DRL when learning dynamics travel through a sequence of plateaus. This is caused by a coupling of learning and data generation arising due to on-policy rollouts. This constrains the agent to learn one thing at a time when parallelization is better. The authors derive a relationship to dynamical systems and show a relationship to saddle points.
 
 #### Key take-away for own work:
 

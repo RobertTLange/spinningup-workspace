@@ -189,7 +189,13 @@ Here are all papers and the corresponding notes that I got to read so far:
 | ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
 | # :smile: | Social Influence as Intrinsic Motivation for MA-DRL, Jaques et al. | 2019 | Social Influence | MOA | [Click](https://arxiv.org/abs/1810.08647) | [Click](13_MARL/2019_Jaques.md) |
 
-# 14. Bonus: Classic Papers in RL Theory or Review
+# 14. KL-Regularized RL
+
+| Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
+| ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
+| # :smile: | Information Asymmetry in KL-Regularized RL, Galashov et al. | 2019 | Learned Priors | - | [Click](https://arxiv.org/abs/1905.01240) | [Click](14_KL_reg_RL/2019_Galashov.md) |
+
+# 15. Bonus: Classic Papers in RL Theory or Review
 | Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
 | ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
 | # :question: | Policy Gradient Methods for Reinforcement Learning with Function Approximation, Sutton et al, 2000. Contributions: Established policy gradient theorem and showed convergence of policy gradient algorithm for arbitrary policy classes. |   |  |  | [Click]() | [Click]() |
