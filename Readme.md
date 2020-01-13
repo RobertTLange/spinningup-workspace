@@ -194,6 +194,7 @@ Here are all papers and the corresponding notes that I got to read so far:
 | Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
 | ------ |:-------------:|  :-----:| :-----:|  :-----:| :-----:|:-----:|
 | # :smile: | Information Asymmetry in KL-Regularized RL, Galashov et al. | 2019 | Learned Priors | - | [Click](https://arxiv.org/abs/1905.01240) | [Click](14_KL_reg_RL/2019_Galashov.md) |
+| # :smile: | Neural Probabilistic Motor Primitives, Merel et al. | 2019 | Few-Shot Transfer | NPMP | [Click](https://arxiv.org/abs/1811.11711) | [Click](14_KL_reg_RL/2019_Merel.md) |
 
 # 15. Bonus: Classic Papers in RL Theory or Review
 | Read / Notes  | Title  & Author  | Year  | Category | Algorithm | Paper  |  Notes |
